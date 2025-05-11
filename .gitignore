@@ -29,5 +29,6 @@ bin/
 .DS_Store
 
 
-.xml
-.iml
+*.xml
+*.iml
+*.idea
