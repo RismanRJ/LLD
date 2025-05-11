@@ -29,7 +29,11 @@ public class Directory extends FileSystemNode {
 
         // Print the directory name with appropriate indentation, emoji and number of children
         // e.g., "    📁 cwa_lld (3 items)"
-        System.out.println(indent + "📁 " + getName() + " (" + getChildren().size() + " items)");
+        int childernSize = 0;
+        for(FileSystemNode file : getChildren()){
+            if(!file.isDeleted()) childernSize++;
+        }
+        System.out.println(indent + "📁 " + getName() + " (" + childernSize+ " items)");
         // Then for each child (let's say we have "design_file_system" directory,
         // "requirements.txt" file, and "notes.md" file)
         // We recursively call display with depth+1 (3 in this case)
